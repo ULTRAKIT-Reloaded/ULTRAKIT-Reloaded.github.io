@@ -14,8 +14,8 @@ theme:
       warning: material/alert
   palette: 
     scheme: slate
-    primary: black
-    accent: deep orange
+    primary: blue
+    accent: cyan
   
   logo: assets/images/ultrakit.png
 markdown_extensions:
@@ -26,3 +26,6 @@ markdown_extensions:
   - pymdownx.superfences
   - admonition
   - pymdownx.details
+  - tables
+extra_css:
+  - stylesheets/extra.css

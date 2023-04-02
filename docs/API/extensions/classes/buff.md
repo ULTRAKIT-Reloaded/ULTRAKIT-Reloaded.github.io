@@ -1,8 +1,9 @@
 # Buff
-Buffis an instance class that inherits from IBuff, which you can use as an alternative to making a new class for each buff.
+## Description
+An instance class which inherits from IBuff, which can serve as an alternative to making a new class for each buff.
 
-To create a new buff, initialize it and set its values as follows:
-
+## Usage
+* Create a new buff that prints to the log when enabled, prints the enemy's position to the log every active frame, and kills the enemy when disabled.
 ```cs linenums="1"
 using ULTRAKIT.Extensions.Classes;
 using ULTRAKIT.Loader.Loaders;
@@ -38,15 +39,28 @@ public static class BuffCreator
 	}
 }
 ```
+## Properties
 
-Alternatively, to inherit directly from the IBuff interface, do this instead.
+| Property      | Type            | Description                                                    |
+| ------------- | --------------- | -------------------------------------------------------------- |
+| EnableScript  | Action          | Function to be called when the buff is enabled.                |
+| DisableScript | Action          | Function to be called when the buff is disabled.               |
+| UpdateScript  | Action          | Function to be called every frame the buff is active.          |
+| IsActive      | bool            | Whether or not the buff is currently active.                   |
+| id            | string          | The unique identifier of the buff.                             |
+| eid           | EnemyIdentifier | The EnemyIdentifier of the enemy this instance is attached to. |
 
+# Additional Information
+Alternatively, it is possible (and perhaps preferable) to inherit directly from the IBuff interface. After doing so, it must be registered.
+
+## Usage
+* Create a new buff that prints to the log when enabled, prints the enemy's position to the log every active frame, and kills the enemy when disabled.
 ```cs linenums="1"
 using ULTRAKIT.Extensions.Interfaces;
 
 public class ExampleBuff : IBuff
 {
-	public EnemyIdentifier eid { get => _eid; set => _eid = value; }
+      public EnemyIdentifier eid { get => _eid; set => _eid = value; }
       public bool IsActive { get => active; }
       public string id => "example.buff";
 
@@ -73,8 +87,7 @@ public class ExampleBuff : IBuff
 }
 ```
 
-Then, in a separate loader class, register it by doing the following:
-
+* An example of registering a buff:
 ```cs linenums="1"
 using ULTRAKIT.Extensions.Interfaces;
 using ULTRAKIT.Loader.Loaders;
@@ -87,3 +100,20 @@ public static class BuffLoader
 	}
 }
 ```
+
+## Properties
+
+| Property      | Type            | Description                                                    |
+| ------------- | --------------- | -------------------------------------------------------------- |
+| IsActive      | bool            | Whether or not the buff is currently active.                   |
+| id            | string          | The unique identifier of the buff.                             |
+| eid           | EnemyIdentifier | The EnemyIdentifier of the enemy this instance is attached to. |
+
+## Methods
+
+| Method    | Type | Description                               |
+| --------- | ---- | ----------------------------------------- |
+| Enable()  | void | Called when the buff is enabled.       |
+| Disable() | void | Called when the buff is disabled.      |
+| Update()  | void | Called every frame the buff is active. |
+
