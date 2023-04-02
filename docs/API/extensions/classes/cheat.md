@@ -130,8 +130,8 @@ public static class CheatsLoader
 
 Valid icons (by default) are:
 
-| Key                   | Standard Icon                                       | PITR Icon |
-| --------------------- | --------------------------------------------------- | --------- |
+| Key                   | Standard Icon                                                      | PITR Icon                                                        |
+| --------------------- | ------------------------------------------------------------------ | ---------------------------------------------------------------- |
 | "grid"                | ![Standard](/../../assets/images/cheats/Grid 1.png)                | ![Standard](/../../assets/images/cheats/Grid.png)                |
 | "wall-jumps"          | ![Standard](/../../assets/images/cheats/Infinite Wall Jumps 1.png) | ![Standard](/../../assets/images/cheats/Infinite Wall Jumps.png) |
 | "navmesh"             | ![Standard](/../../assets/images/cheats/NavMesh 1.png)             | ![Standard](/../../assets/images/cheats/NavMesh.png)             |
